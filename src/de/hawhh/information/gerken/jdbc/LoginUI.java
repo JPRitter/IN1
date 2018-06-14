@@ -24,13 +24,14 @@ public class LoginUI
 		_username = null; 
 		_password  = null; 
 	}
-	public static Dialog<Pair<String,String>> login()
+//	Dialog<Pair<String,String>>
+	public void login()
 	{
 		
 		
 		Dialog<Pair<String, String>> dialog = new Dialog<>();
-		dialog.setTitle("Login Dialog");
-		dialog.setHeaderText("Look, a Custom Login Dialog");
+		dialog.setTitle("Login");
+		dialog.setHeaderText("Eingeben der Account Daten:");
 
 		// Set the icon (must be included in the project).
 		//dialog.setGraphic(new ImageView(this.getClass().getResource("login.png").toString()));
@@ -74,12 +75,14 @@ public class LoginUI
 			
 			
 		    if (dialogButton == loginButtonType) {
+		    	_username = username.getText();
+		    	_password = password.getText();
 		        return new Pair<>(username.getText(), password.getText());
 		    }
 		    return null;
 		});
 
-		return  dialog.showAndWait();
+		dialog.showAndWait();
 
 //		result.ifPresent(usernamePassword -> {
 //		    System.out.println("Username=" + usernamePassword.getKey() + ", Password=" + usernamePassword.getValue());
