@@ -76,7 +76,7 @@ public class StartupIN extends Application
 		}
 		con.close();
 		_uiDat = new DatenbankUI("Bla");
-		
+		 
 		_uiDat.aendereTable(ueber);
 		_uiDat.zeigeFenster();
 	}
