@@ -24,8 +24,8 @@ public class LoginUI
 		_username = null; 
 		_password  = null; 
 	}
-//	Dialog<Pair<String,String>>
-	public void login()
+//	Dialog<Pair<String,String>>fd
+	public void login()  
 	{
 		
 		
