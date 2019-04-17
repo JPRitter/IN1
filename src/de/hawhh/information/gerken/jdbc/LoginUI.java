@@ -46,7 +46,7 @@ public class LoginUI
 		grid.setVgap(10);
 		grid.setPadding(new Insets(20, 150, 10, 10));
 
-		TextField username = new TextField();
+		TextField username = new TextField("ack592");
 		username.setPromptText("Username");
 		PasswordField password = new PasswordField();
 		password.setPromptText("Password");

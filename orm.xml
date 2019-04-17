@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings .>
+	<package>de.hawhamburg.se</package>
+	<entity class="de.hawhamburg.se.Customer" name="Customer">
+		<table name="CUSTOMER" />
+		<attributes>
+			<id name="ID">
+				<generated-value strategy="SEQUENCE“ generator="CUSTOMERGEN"/>
+				<sequence-generator name="CUSTOMERGEN"sequence-name="CUSTOMERSEQ"/>
+			</id>
+			<basic name="name">
+				<column name="CUSTOMER_NAME" length="50"/>
+			</basic>
+		</attributes>
+	</entity>
+</entity-mappings>
