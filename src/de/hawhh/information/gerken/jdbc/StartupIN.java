@@ -64,18 +64,26 @@ public class StartupIN extends Application
 			return;
 
 		}
-		InsertStatic(con, "delete from CUSTOMER");
+		Customer.ExecuteSql(con, "DELETE FROM CUSTOMER");
+		Customer.insertCustomer(con, "1234", "Bob", "Baker", "12.04.2001");
+		Customer.insertCustomer(con, "1235", "Jack", "Faker", "10.04.2001");
+		Customer.insertCustomer(con, "1233", "Faisla", "Danils", "13.04.2001");
+		Customer.insertCustomer(con, "1236", "Phibs", "Aguiar", "14.04.2001");
+		Customer.insertCustomer(con, "1237", "Ver", "Berger", "19.04.2001");
+		Customer.insertCustomer(con, "1238", "Bear", "Lager", "17.04.2001");
+		Customer.insertCustomer(con, "1239", "Jopnny", "Bier", "16.04.2001");
+		Customer.insertCustomer(con, "123445", "Jay", "Beer", "15.04.2001");
+		Customer.insertCustomer(con, "123455", "Steph", "Tilus", "14.04.2001");
+		Customer.insertCustomer(con, "12313", "Tim", "Tark", "11.04.2001");
 		
-		InsertStatic(con, "insert into CUSTOMER Values(1234,'Bob','Baker','12.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(1235,'Jack','Faker','10.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(1233,'Faisla','Danils','13.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(1236,'Phibs','Aguiar','14.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(1237,'Ver','Berger','19.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(1238,'Bear','Lager','17.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(1239,'Jopnny','Bier','16.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(123445,'Jay','Beer','15.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(123455,'Steph','Tilus','14.04.2001')");
-		InsertStatic(con, "insert into CUSTOMER Values(12313,'Tim','Tark','11.04.2001')");
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("haw_demo");
+//		EntityManager em = emf.createEntityManager();
+		
+//		em.getTransaction().begin();
+//		final Customer test1 = new Customer("123", "Mr.", "Heckenschere", "12.04.2001");
+//		em.persist(test1);
+//		em.getTransaction().commit();
+		
 		stmt = con.createStatement();
 		rs = stmt.executeQuery("select * from CUSTOMER");
 		ResultSetMetaData rsetmd = rs.getMetaData();
@@ -97,17 +105,5 @@ public class StartupIN extends Application
 		con.close();
 
 	}
-	
-	public static void InsertStatic(Connection c, String sql) throws SQLException
-	{
-		try
-		{
-			PreparedStatement ps = c.prepareStatement(sql);
-			ps.executeUpdate();
-		}
-		catch(SQLException ex)
-		{
-			System.out.println("Fehler");
-		}
-	}
+
 }
