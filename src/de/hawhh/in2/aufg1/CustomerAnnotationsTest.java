@@ -1,4 +1,4 @@
-package de.hawhh.information.gerken.jdbc;
+package de.hawhh.in2.aufg1;
 
 import static org.junit.jupiter.api.Assertions.*;
 

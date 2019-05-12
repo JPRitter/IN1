@@ -1,4 +1,4 @@
-package de.hawhh.information.gerken.jdbc;
+package de.hawhh.in2.aufg1;
 
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
